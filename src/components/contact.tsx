@@ -1,6 +1,5 @@
 import { config } from "@/data/config";
 import ContactForm from "./contact-form";
-import CompassObject from "./compass-object";
 
 const SOCIAL = [
     { href: config.social.github, label: "GitHub", handle: "@darioeliaaa" },
@@ -15,10 +14,7 @@ export default function Contact() {
                 Contatti — Lavoriamo insieme
             </h2>
             <div className="contact__grid cols">
-                <div className="contact__obj" data-reveal>
-                    <CompassObject />
-                </div>
-                <div className="contact__say" data-reveal style={{ ["--d" as string]: "0.08s" }}>
+                <div className="contact__say" data-reveal>
                     <p className="contact__line">
                         Se sei arrivato fin qui,
                         <br />
@@ -48,7 +44,7 @@ export default function Contact() {
                         </div>
                     </dl>
                 </div>
-                <div className="contact__form" data-reveal style={{ ["--d" as string]: "0.16s" }}>
+                <div className="contact__form" data-reveal style={{ ["--d" as string]: "0.08s" }}>
                     <ContactForm />
                     {config.calendly && (
                         <div className="contact__call">

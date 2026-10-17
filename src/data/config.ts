@@ -125,7 +125,7 @@ const config = {
     },
     social: {
         twitter: "",
-        linkedin: "https://www.linkedin.com/in/dario-elia-2610b3375/",
+        linkedin: "https://www.linkedin.com/in/darioeliaaa/",
         instagram: "https://www.instagram.com/darioeliaaa/",
         facebook: "",
         github: "https://github.com/darioeliaaa",
