@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
-import { config } from "@/data/config";
+import { config, indexable } from "@/data/config";
 import AppShell from "@/components/app-shell";
 import "./base.css";
 import "./site.css";
@@ -23,8 +23,9 @@ export const metadata: Metadata = {
         default: config.title,
         template: `%s | ${config.author}`,
     },
-    description: config.description.long,
+    description: config.description.meta,
     keywords: config.keywords,
+    applicationName: config.author,
     authors: [{ name: config.author, url: config.site }],
     creator: config.author,
     alternates: { canonical: "/" },
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     verification: { google: "Ex-Sw0RFL2YbsepMyz5QqGvwntIHu6JSlWECf_kVeK8" },
     openGraph: {
         title: config.title,
-        description: config.description.short,
+        description: config.description.meta,
         url: config.site,
         siteName: config.author,
         locale: "it_IT",
@@ -41,13 +42,18 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: config.title,
-        description: config.description.short,
+        description: config.description.meta,
     },
-    robots: {
-        index: true,
-        follow: true,
-        googleBot: { index: true, follow: true, "max-image-preview": "large" },
-    },
+    // il nome sotto l'icona quando lo aggiungi alla Home dell'iPhone (altrimenti usa il titolo, tagliato)
+    appleWebApp: { title: config.author, capable: true, statusBarStyle: "default" },
+    formatDetection: { telephone: false },
+    robots: indexable
+        ? {
+              index: true,
+              follow: true,
+              googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+          }
+        : { index: false, follow: false },
 };
 
 export const viewport: Viewport = {
@@ -59,19 +65,53 @@ export const viewport: Viewport = {
     ],
 };
 
-/** Schema.org Person: aiuta i motori di ricerca a mostrare una scheda corretta. */
-const personJsonLd = {
+/**
+ * Dati strutturati (schema.org) per Google: il sito si chiama "Dario Elia"
+ * (è il nome che mostra sopra il risultato al posto del dominio) ed è di una
+ * persona, Dario Elia, che è la stessa dei profili LinkedIn, GitHub e Instagram.
+ */
+const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: config.author,
-    url: config.site,
-    jobTitle: config.role,
-    description: config.description.short,
-    image: `${config.site}/opengraph-image`,
-    address: { "@type": "PostalAddress", addressCountry: "IT" },
-    alumniOf: { "@type": "CollegeOrUniversity", name: "Università della Calabria" },
-    knowsAbout: config.keywords,
-    sameAs: Object.values(config.social).filter(Boolean),
+    "@graph": [
+        {
+            "@type": "WebSite",
+            "@id": `${config.site}/#sito`,
+            url: config.site,
+            name: config.author,
+            alternateName: ["dario.elia", "darioelia.it"],
+            inLanguage: "it-IT",
+            publisher: { "@id": `${config.site}/#dario` },
+        },
+        {
+            "@type": "Person",
+            "@id": `${config.site}/#dario`,
+            name: config.author,
+            givenName: "Dario",
+            familyName: "Elia",
+            url: config.site,
+            image: `${config.site}${config.avatar}`,
+            jobTitle: config.role,
+            description: config.description.short,
+            address: { "@type": "PostalAddress", addressRegion: "Calabria", addressCountry: "IT" },
+            affiliation: { "@type": "CollegeOrUniversity", name: "Università della Calabria", url: "https://www.unical.it" },
+            knowsAbout: [
+                "Java",
+                "Spring Boot",
+                "Spring Security",
+                "Keycloak",
+                "Angular",
+                "TypeScript",
+                "Next.js",
+                "Kotlin",
+                "Jetpack Compose",
+                "Android",
+                "PostgreSQL",
+                "Docker",
+                "Three.js",
+            ],
+            sameAs: Object.values(config.social).filter(Boolean),
+        },
+    ],
 };
 
 // Prima del primo disegno: tema scelto e classe "js" (attiva le comparse allo scroll).
@@ -90,7 +130,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </Script>
                 <script
                     type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
                 />
             </head>
             <body>

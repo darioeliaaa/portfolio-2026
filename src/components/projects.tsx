@@ -5,6 +5,7 @@ import { PROJECT_GROUPS, projects, type Project, type ProjectGroup } from "@/dat
 import { ScrollTrigger } from "@/lib/scroll";
 import SectionTitle from "./section-title";
 import ProjectDialog from "./project-dialog";
+import CarouselCount from "./carousel-count";
 
 const ORDER = [
     "tripify",
@@ -37,6 +38,7 @@ export default function Projects() {
     const [preview, setPreview] = useState<Project | null>(null);
     const cursorRef = useRef<HTMLDivElement>(null);
     const previewRef = useRef<HTMLDivElement>(null);
+    const gridRef = useRef<HTMLUListElement>(null);
 
     const list = useMemo(() => (filter === "tutti" ? SORTED : SORTED.filter((p) => p.group === filter)), [filter]);
     const note = filter === "tutti" ? null : PROJECT_GROUPS.find((g) => g.id === filter)?.note;
@@ -100,31 +102,34 @@ export default function Projects() {
             )}
 
             {view === "griglia" ? (
-                <ul className="pgrid" key={`g-${filter}`}>
-                    {list.map((p, i) => (
-                        <li key={p.id} className={`pgrid__item pgrid__item--${i % 6}`} data-reveal>
-                            <button
-                                type="button"
-                                className="pcard"
-                                onClick={() => setOpenId(p.id)}
-                                onMouseEnter={() => cursorRef.current?.classList.add("is-on")}
-                                onMouseLeave={() => cursorRef.current?.classList.remove("is-on")}
-                                aria-label={`${p.title}: apri i dettagli`}
-                            >
-                                <span className="pcard__media">
-                                    <img src={p.src} alt="" loading="lazy" decoding="async" />
-                                </span>
-                                <span className="pcard__cap">
-                                    <span className="pcard__title">
-                                        {p.title} <span className="pcard__cat">({p.category})</span>
+                <>
+                    <ul ref={gridRef} className="pgrid" key={`g-${filter}`}>
+                        {list.map((p, i) => (
+                            <li key={p.id} className={`pgrid__item pgrid__item--${i % 6}`} data-reveal>
+                                <button
+                                    type="button"
+                                    className="pcard"
+                                    onClick={() => setOpenId(p.id)}
+                                    onMouseEnter={() => cursorRef.current?.classList.add("is-on")}
+                                    onMouseLeave={() => cursorRef.current?.classList.remove("is-on")}
+                                    aria-label={`${p.title}: apri i dettagli`}
+                                >
+                                    <span className="pcard__media">
+                                        <img src={p.src} alt="" loading="lazy" decoding="async" />
                                     </span>
-                                    <span className="pcard__lead">{p.lead}</span>
-                                    <span className="pcard__group mono">{GROUP_LABEL[p.group]}</span>
-                                </span>
-                            </button>
-                        </li>
-                    ))}
-                </ul>
+                                    <span className="pcard__cap">
+                                        <span className="pcard__title">
+                                            {p.title} <span className="pcard__cat">({p.category})</span>
+                                        </span>
+                                        <span className="pcard__lead">{p.lead}</span>
+                                        <span className="pcard__group mono">{GROUP_LABEL[p.group]}</span>
+                                    </span>
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                    <CarouselCount key={`c-${filter}`} target={gridRef} total={list.length} />
+                </>
             ) : (
                 <ol className="plist cols" key={`l-${filter}`}>
                     {list.map((p, i) => (

@@ -13,7 +13,11 @@ export const metadata: Metadata = {
         title: `Curriculum — ${config.author}`,
         description: cvDescription,
         url: `${config.site}/cv`,
+        siteName: config.author,
+        locale: "it_IT",
         type: "profile",
+        firstName: "Dario",
+        lastName: "Elia",
     },
     twitter: {
         card: "summary_large_image",

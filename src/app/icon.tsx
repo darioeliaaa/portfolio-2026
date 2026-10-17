@@ -1,18 +1,18 @@
 import { ImageResponse } from "next/og";
-import { ogFonts } from "@/lib/og";
+import { IconArt, ogFonts } from "@/lib/og";
 
-export const size = { width: 512, height: 512 };
-export const contentType = "image/png";
+const SIZES = [32, 192, 512];
 
-/** Icona: una "d" corsiva col punto, su carta grigia. */
-export default async function Icon() {
-    return new ImageResponse(
-        (
-            <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", background: "#141414", color: "#f1f1f1", borderRadius: 96 }}>
-                <span style={{ fontFamily: "Serif", fontStyle: "italic", fontSize: 400, lineHeight: 1, marginTop: -40 }}>d</span>
-                <span style={{ fontFamily: "Sans", fontSize: 400, lineHeight: 1, marginTop: -40 }}>.</span>
-            </div>
-        ),
-        { ...size, fonts: await ogFonts() },
-    );
+/** Icone della scheda del browser e dell'app installata (Android, Chrome). */
+export function generateImageMetadata() {
+    return SIZES.map((s) => ({ id: String(s), size: { width: s, height: s }, contentType: "image/png" }));
+}
+
+export default async function Icon({ id }: { id: Promise<string> }) {
+    const s = Number(await id);
+    return new ImageResponse(<IconArt size={s} glyph={s <= 32 ? 0.9 : 0.78} radius={0.22} />, {
+        width: s,
+        height: s,
+        fonts: await ogFonts(),
+    });
 }

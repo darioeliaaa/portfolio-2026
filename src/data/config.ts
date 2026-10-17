@@ -24,6 +24,11 @@ const config = {
         long: "Ciao, sono Dario. Ho 23 anni e sono uno sviluppatore con il pallino per le interfacce fuori dagli schemi. Studio Informatica all'Università della Calabria (Unical) e costruisco applicazioni intere, dal database all'interfaccia: Java e Spring Boot per il backend, Angular e Next.js per il web, Kotlin per le app Android, fino alla sperimentazione con il web 3D. Mi piace trasformare concetti complessi in codice elegante ed esperienze digitali immersive.",
         short:
             "Sviluppatore full-stack junior e studente di Informatica all'Unical. Java, Spring Boot, Angular e Kotlin: backend, web e app Android, con una passione per le interfacce creative.",
+        /**
+         * Quella che leggono Google (sotto il titolo nei risultati) e le anteprime
+         * di WhatsApp, Telegram e LinkedIn. Sotto i 160 caratteri, così non viene tagliata.
+         */
+        meta: "Dario Elia, sviluppatore full-stack junior e studente di Informatica all'Unical: siti web, app Android e backend Java. Progetti, CV e contatti.",
     },
     keywords: [
         "Dario Elia",
@@ -126,4 +131,11 @@ const config = {
         github: "https://github.com/darioeliaaa",
     },
 };
-export { config };
+
+/**
+ * Se Google può indicizzare questa versione. Su Vercel solo la produzione
+ * (darioelia.it); le anteprime dei branch no. In locale sì, per poterlo provare.
+ */
+const indexable = !process.env.VERCEL_ENV || process.env.VERCEL_ENV === "production";
+
+export { config, indexable };

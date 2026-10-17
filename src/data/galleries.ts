@@ -1,4 +1,4 @@
-// Generato da scripts/gallery/build.mjs: modifica scripts/gallery/config.mjs e rilancia lo script.
+// Schermate dei progetti: al massimo 10 per vista (computer / telefono), solo quelle essenziali.
 
 export type GalleryShot = {
     label: string;
@@ -38,14 +38,6 @@ export const galleries: Record<string, Gallery> = {
                     "full": "/assets/gallery/moneymind/01-accesso-9c31f2e8-2880.webp"
                 },
                 {
-                    "label": "Registrazione",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/moneymind/02-registrazione-9598a6d9-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/moneymind/02-registrazione-9598a6d9-2880.webp"
-                },
-                {
                     "label": "Dashboard del conto",
                     "w": 2880,
                     "h": 1800,
@@ -70,14 +62,6 @@ export const galleries: Record<string, Gallery> = {
                     "full": "/assets/gallery/moneymind/05-movimenti-96835bc2-2880.webp"
                 },
                 {
-                    "label": "I miei wallet",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/moneymind/06-wallet-21303774-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/moneymind/06-wallet-21303774-2880.webp"
-                },
-                {
                     "label": "Wallet condiviso",
                     "w": 2880,
                     "h": 1800,
@@ -86,28 +70,12 @@ export const galleries: Record<string, Gallery> = {
                     "full": "/assets/gallery/moneymind/07-wallet-condiviso-2a291baf-2880.webp"
                 },
                 {
-                    "label": "Gestione wallet · budget e limiti",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/moneymind/08-gestione-wallet-409daf98-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/moneymind/08-gestione-wallet-409daf98-2880.webp"
-                },
-                {
                     "label": "Market · quotazioni e notizie",
                     "w": 2880,
                     "h": 1800,
                     "rail": "/assets/gallery/moneymind/09-market-74ebf58c-1280.webp",
                     "railW": 1280,
                     "full": "/assets/gallery/moneymind/09-market-74ebf58c-2880.webp"
-                },
-                {
-                    "label": "Listino azioni",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/moneymind/10-listino-8e0e4833-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/moneymind/10-listino-8e0e4833-2880.webp"
                 },
                 {
                     "label": "Grafico del titolo",
@@ -140,30 +108,6 @@ export const galleries: Record<string, Gallery> = {
                     "rail": "/assets/gallery/moneymind/14-allocazione-4b8689e6-1280.webp",
                     "railW": 1280,
                     "full": "/assets/gallery/moneymind/14-allocazione-4b8689e6-2880.webp"
-                },
-                {
-                    "label": "Profilo",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/moneymind/15-profilo-f48d9da4-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/moneymind/15-profilo-f48d9da4-2880.webp"
-                },
-                {
-                    "label": "Impostazioni",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/moneymind/16-impostazioni-d771e26a-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/moneymind/16-impostazioni-d771e26a-2880.webp"
-                },
-                {
-                    "label": "Chi siamo",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/moneymind/17-chi-siamo-bf777771-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/moneymind/17-chi-siamo-bf777771-2880.webp"
                 }
             ],
             "mobile": [
@@ -240,22 +184,6 @@ export const galleries: Record<string, Gallery> = {
         "views": {
             "mobile": [
                 {
-                    "label": "Accesso",
-                    "w": 1080,
-                    "h": 2400,
-                    "rail": "/assets/gallery/tripify/m-01-accesso-a0f87a29-640.webp",
-                    "railW": 640,
-                    "full": "/assets/gallery/tripify/m-01-accesso-a0f87a29-1080.webp"
-                },
-                {
-                    "label": "Registrazione",
-                    "w": 1080,
-                    "h": 2400,
-                    "rail": "/assets/gallery/tripify/m-02-registrazione-81f51b75-640.webp",
-                    "railW": 640,
-                    "full": "/assets/gallery/tripify/m-02-registrazione-81f51b75-1080.webp"
-                },
-                {
                     "label": "Home",
                     "w": 1080,
                     "h": 2400,
@@ -280,14 +208,6 @@ export const galleries: Record<string, Gallery> = {
                     "full": "/assets/gallery/tripify/m-05-hotel-b2c291cd-1080.webp"
                 },
                 {
-                    "label": "Hotel · servizi e mappa",
-                    "w": 1080,
-                    "h": 2400,
-                    "rail": "/assets/gallery/tripify/m-06-hotel-2-8c29689b-640.webp",
-                    "railW": 640,
-                    "full": "/assets/gallery/tripify/m-06-hotel-2-8c29689b-1080.webp"
-                },
-                {
                     "label": "Volo · classi e passeggeri",
                     "w": 1080,
                     "h": 2400,
@@ -304,44 +224,12 @@ export const galleries: Record<string, Gallery> = {
                     "full": "/assets/gallery/tripify/m-08-esperienza-c91a9b83-1080.webp"
                 },
                 {
-                    "label": "Recensioni",
-                    "w": 1080,
-                    "h": 2400,
-                    "rail": "/assets/gallery/tripify/m-09-recensioni-25e5ca13-640.webp",
-                    "railW": 640,
-                    "full": "/assets/gallery/tripify/m-09-recensioni-25e5ca13-1080.webp"
-                },
-                {
-                    "label": "Filtri avanzati",
-                    "w": 1080,
-                    "h": 2400,
-                    "rail": "/assets/gallery/tripify/m-10-filtri-89c37484-640.webp",
-                    "railW": 640,
-                    "full": "/assets/gallery/tripify/m-10-filtri-89c37484-1080.webp"
-                },
-                {
-                    "label": "Itinerari pubblici",
-                    "w": 1080,
-                    "h": 2400,
-                    "rail": "/assets/gallery/tripify/m-11-itinerari-84d0020a-640.webp",
-                    "railW": 640,
-                    "full": "/assets/gallery/tripify/m-11-itinerari-84d0020a-1080.webp"
-                },
-                {
                     "label": "Dettaglio itinerario",
                     "w": 1080,
                     "h": 2400,
                     "rail": "/assets/gallery/tripify/m-12-itinerario-5deebd8b-640.webp",
                     "railW": 640,
                     "full": "/assets/gallery/tripify/m-12-itinerario-5deebd8b-1080.webp"
-                },
-                {
-                    "label": "Carrello",
-                    "w": 1080,
-                    "h": 2400,
-                    "rail": "/assets/gallery/tripify/m-13-carrello-820e82d2-640.webp",
-                    "railW": 640,
-                    "full": "/assets/gallery/tripify/m-13-carrello-820e82d2-1080.webp"
                 },
                 {
                     "label": "Checkout",
@@ -368,76 +256,12 @@ export const galleries: Record<string, Gallery> = {
                     "full": "/assets/gallery/tripify/m-16-chat-c39b1bdc-1080.webp"
                 },
                 {
-                    "label": "Profilo",
-                    "w": 1080,
-                    "h": 2400,
-                    "rail": "/assets/gallery/tripify/m-17-profilo-378f223e-640.webp",
-                    "railW": 640,
-                    "full": "/assets/gallery/tripify/m-17-profilo-378f223e-1080.webp"
-                },
-                {
-                    "label": "Documenti di viaggio",
-                    "w": 1080,
-                    "h": 2400,
-                    "rail": "/assets/gallery/tripify/m-18-documenti-85d32fcc-640.webp",
-                    "railW": 640,
-                    "full": "/assets/gallery/tripify/m-18-documenti-85d32fcc-1080.webp"
-                },
-                {
-                    "label": "Compagni di viaggio",
-                    "w": 1080,
-                    "h": 2400,
-                    "rail": "/assets/gallery/tripify/m-19-compagni-18893b98-640.webp",
-                    "railW": 640,
-                    "full": "/assets/gallery/tripify/m-19-compagni-18893b98-1080.webp"
-                },
-                {
-                    "label": "Metodi di pagamento",
-                    "w": 1080,
-                    "h": 2400,
-                    "rail": "/assets/gallery/tripify/m-20-portafoglio-eda17231-640.webp",
-                    "railW": 640,
-                    "full": "/assets/gallery/tripify/m-20-portafoglio-eda17231-1080.webp"
-                },
-                {
-                    "label": "Agenzie",
-                    "w": 1080,
-                    "h": 2400,
-                    "rail": "/assets/gallery/tripify/m-21-organizzatori-7408984a-640.webp",
-                    "railW": 640,
-                    "full": "/assets/gallery/tripify/m-21-organizzatori-7408984a-1080.webp"
-                },
-                {
-                    "label": "Vetrina organizzatore",
-                    "w": 1080,
-                    "h": 2400,
-                    "rail": "/assets/gallery/tripify/m-22-vetrina-9e533a8d-640.webp",
-                    "railW": 640,
-                    "full": "/assets/gallery/tripify/m-22-vetrina-9e533a8d-1080.webp"
-                },
-                {
                     "label": "Organizzatore · prenotazioni e incassi",
                     "w": 1080,
                     "h": 2400,
                     "rail": "/assets/gallery/tripify/m-23-org-prenotazioni-76d955b1-640.webp",
                     "railW": 640,
                     "full": "/assets/gallery/tripify/m-23-org-prenotazioni-76d955b1-1080.webp"
-                },
-                {
-                    "label": "Organizzatore · annunci",
-                    "w": 1080,
-                    "h": 2400,
-                    "rail": "/assets/gallery/tripify/m-24-org-annunci-0a345683-640.webp",
-                    "railW": 640,
-                    "full": "/assets/gallery/tripify/m-24-org-annunci-0a345683-1080.webp"
-                },
-                {
-                    "label": "Organizzatore · nuovo annuncio",
-                    "w": 1080,
-                    "h": 2400,
-                    "rail": "/assets/gallery/tripify/m-25-org-nuovo-1be99142-640.webp",
-                    "railW": 640,
-                    "full": "/assets/gallery/tripify/m-25-org-nuovo-1be99142-1080.webp"
                 }
             ]
         }
@@ -454,14 +278,6 @@ export const galleries: Record<string, Gallery> = {
                     "rail": "/assets/gallery/wavely/01-accesso-6446832d-1280.webp",
                     "railW": 1280,
                     "full": "/assets/gallery/wavely/01-accesso-6446832d-2880.webp"
-                },
-                {
-                    "label": "Registrazione",
-                    "w": 2880,
-                    "h": 1828,
-                    "rail": "/assets/gallery/wavely/01b-registrati-efd33f35-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/wavely/01b-registrati-efd33f35-2880.webp"
                 },
                 {
                     "label": "Home",
@@ -520,14 +336,6 @@ export const galleries: Record<string, Gallery> = {
                     "full": "/assets/gallery/wavely/08-palco-edaf7682-2880.webp"
                 },
                 {
-                    "label": "Coda di riproduzione",
-                    "w": 2880,
-                    "h": 1828,
-                    "rail": "/assets/gallery/wavely/10-coda-38478e95-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/wavely/10-coda-38478e95-2880.webp"
-                },
-                {
                     "label": "Statistiche d'ascolto",
                     "w": 2880,
                     "h": 1828,
@@ -560,14 +368,6 @@ export const galleries: Record<string, Gallery> = {
                     "full": "/assets/gallery/bulloneco/01-accesso-b2ab63be-2880.webp"
                 },
                 {
-                    "label": "Registrazione",
-                    "w": 2880,
-                    "h": 1872,
-                    "rail": "/assets/gallery/bulloneco/02-registrazione-62c2c3c0-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/bulloneco/02-registrazione-62c2c3c0-2880.webp"
-                },
-                {
                     "label": "Catalogo",
                     "w": 2880,
                     "h": 1872,
@@ -598,14 +398,6 @@ export const galleries: Record<string, Gallery> = {
                     "rail": "/assets/gallery/bulloneco/06-ordini-eee4c0fb-1280.webp",
                     "railW": 1280,
                     "full": "/assets/gallery/bulloneco/06-ordini-eee4c0fb-2880.webp"
-                },
-                {
-                    "label": "Richieste al negozio",
-                    "w": 2880,
-                    "h": 1872,
-                    "rail": "/assets/gallery/bulloneco/07-richieste-714e6de1-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/bulloneco/07-richieste-714e6de1-2880.webp"
                 },
                 {
                     "label": "Profilo",
@@ -674,15 +466,6 @@ export const galleries: Record<string, Gallery> = {
                     "full": "/assets/gallery/ottone/02-quattro-telai-774b56a2-2880.webp"
                 },
                 {
-                    "label": "Dalla misura alla consegna",
-                    "path": "/",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/ottone/03-processo-06830597-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/ottone/03-processo-06830597-2880.webp"
-                },
-                {
                     "label": "Catalogo con filtri",
                     "path": "/telai",
                     "w": 2880,
@@ -728,15 +511,6 @@ export const galleries: Record<string, Gallery> = {
                     "full": "/assets/gallery/ottone/08-finiture-d5b64d30-2880.webp"
                 },
                 {
-                    "label": "Progetti salvati",
-                    "path": "/carrello",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/ottone/10-progetti-db4afb3b-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/ottone/10-progetti-db4afb3b-2880.webp"
-                },
-                {
                     "label": "L'officina",
                     "path": "/officina",
                     "w": 2880,
@@ -744,15 +518,6 @@ export const galleries: Record<string, Gallery> = {
                     "rail": "/assets/gallery/ottone/11-officina-94e7a2d1-1280.webp",
                     "railW": 1280,
                     "full": "/assets/gallery/ottone/11-officina-94e7a2d1-2880.webp"
-                },
-                {
-                    "label": "Le cinque fasi",
-                    "path": "/officina",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/ottone/12-fasi-b2b95204-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/ottone/12-fasi-b2b95204-2880.webp"
                 },
                 {
                     "label": "Area rivenditori",
@@ -771,15 +536,6 @@ export const galleries: Record<string, Gallery> = {
                     "rail": "/assets/gallery/ottone/14-listino-314d2d76-1280.webp",
                     "railW": 1280,
                     "full": "/assets/gallery/ottone/14-listino-314d2d76-2880.webp"
-                },
-                {
-                    "label": "Contatti",
-                    "path": "/contatti",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/ottone/15-contatti-3258bcc7-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/ottone/15-contatti-3258bcc7-2880.webp"
                 }
             ],
             "mobile": [
@@ -921,15 +677,6 @@ export const galleries: Record<string, Gallery> = {
                     "full": "/assets/gallery/piccantomane/09-checkout-204943d3-2880.webp"
                 },
                 {
-                    "label": "Registro ordini",
-                    "path": "/registro-ordini",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/piccantomane/10-registro-03926c86-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/piccantomane/10-registro-03926c86-2880.webp"
-                },
-                {
                     "label": "Il marchio",
                     "path": "/il-marchio",
                     "w": 2880,
@@ -937,24 +684,6 @@ export const galleries: Record<string, Gallery> = {
                     "rail": "/assets/gallery/piccantomane/11-marchio-2fbc84b3-1280.webp",
                     "railW": 1280,
                     "full": "/assets/gallery/piccantomane/11-marchio-2fbc84b3-2880.webp"
-                },
-                {
-                    "label": "Spedizioni",
-                    "path": "/spedizioni",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/piccantomane/12-spedizioni-aa06d045-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/piccantomane/12-spedizioni-aa06d045-2880.webp"
-                },
-                {
-                    "label": "Contatti",
-                    "path": "/contatti",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/piccantomane/13-contatti-cb6edfe2-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/piccantomane/13-contatti-cb6edfe2-2880.webp"
                 }
             ],
             "mobile": [
@@ -1051,15 +780,6 @@ export const galleries: Record<string, Gallery> = {
                     "full": "/assets/gallery/sidero/04-anno-fab58b4a-2880.webp"
                 },
                 {
-                    "label": "Dal diario",
-                    "path": "/it",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/sidero/05-diario-home-47a24150-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/sidero/05-diario-home-47a24150-2880.webp"
-                },
-                {
                     "label": "I vini",
                     "path": "/it/vini",
                     "w": 2880,
@@ -1076,15 +796,6 @@ export const galleries: Record<string, Gallery> = {
                     "rail": "/assets/gallery/sidero/07-riserva-ef13f060-1280.webp",
                     "railW": 1280,
                     "full": "/assets/gallery/sidero/07-riserva-ef13f060-2880.webp"
-                },
-                {
-                    "label": "Scheda vino · rosato",
-                    "path": "/it/vini/punta-alice",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/sidero/08-punta-alice-d19a6d48-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/sidero/08-punta-alice-d19a6d48-2880.webp"
                 },
                 {
                     "label": "Territorio",
@@ -1105,15 +816,6 @@ export const galleries: Record<string, Gallery> = {
                     "full": "/assets/gallery/sidero/10-visite-23756d4b-2880.webp"
                 },
                 {
-                    "label": "Diario",
-                    "path": "/it/diario",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/sidero/11-diario-780fd22c-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/sidero/11-diario-780fd22c-2880.webp"
-                },
-                {
                     "label": "La cantina",
                     "path": "/it/cantina",
                     "w": 2880,
@@ -1130,15 +832,6 @@ export const galleries: Record<string, Gallery> = {
                     "rail": "/assets/gallery/sidero/13-distribuzione-2e32f474-1280.webp",
                     "railW": 1280,
                     "full": "/assets/gallery/sidero/13-distribuzione-2e32f474-2880.webp"
-                },
-                {
-                    "label": "Contatti",
-                    "path": "/it/contatti",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/sidero/14-contatti-32160cdd-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/sidero/14-contatti-32160cdd-2880.webp"
                 }
             ],
             "mobile": [
@@ -1253,15 +946,6 @@ export const galleries: Record<string, Gallery> = {
                     "full": "/assets/gallery/pelaggi/06-formati-ddbe2ca7-2880.webp"
                 },
                 {
-                    "label": "Dalla terra alla tavola",
-                    "path": "/",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/pelaggi/07-storia-b6b1d66b-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/pelaggi/07-storia-b6b1d66b-2880.webp"
-                },
-                {
                     "label": "Il frantoio",
                     "path": "/frantoio",
                     "w": 2880,
@@ -1269,15 +953,6 @@ export const galleries: Record<string, Gallery> = {
                     "rail": "/assets/gallery/pelaggi/08-frantoio-2d658e42-1280.webp",
                     "railW": 1280,
                     "full": "/assets/gallery/pelaggi/08-frantoio-2d658e42-2880.webp"
-                },
-                {
-                    "label": "Ora per ora",
-                    "path": "/frantoio",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/pelaggi/09-processo-b65d599b-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/pelaggi/09-processo-b65d599b-2880.webp"
                 },
                 {
                     "label": "Scheda analitica",
@@ -1305,42 +980,6 @@ export const galleries: Record<string, Gallery> = {
                     "rail": "/assets/gallery/pelaggi/12-chi-siamo-8189abf2-1280.webp",
                     "railW": 1280,
                     "full": "/assets/gallery/pelaggi/12-chi-siamo-8189abf2-2880.webp"
-                },
-                {
-                    "label": "Tre generazioni",
-                    "path": "/chi-siamo",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/pelaggi/13-generazioni-55db8561-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/pelaggi/13-generazioni-55db8561-2880.webp"
-                },
-                {
-                    "label": "Quello che non facciamo",
-                    "path": "/chi-siamo",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/pelaggi/14-regole-807f3369-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/pelaggi/14-regole-807f3369-2880.webp"
-                },
-                {
-                    "label": "Contatti",
-                    "path": "/contatti",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/pelaggi/15-contatti-ac22a46a-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/pelaggi/15-contatti-ac22a46a-2880.webp"
-                },
-                {
-                    "label": "Messaggio inviato",
-                    "path": "/contatti",
-                    "w": 2880,
-                    "h": 1800,
-                    "rail": "/assets/gallery/pelaggi/16-conferma-f7b7912f-1280.webp",
-                    "railW": 1280,
-                    "full": "/assets/gallery/pelaggi/16-conferma-f7b7912f-2880.webp"
                 }
             ],
             "mobile": [
@@ -1393,28 +1032,12 @@ export const galleries: Record<string, Gallery> = {
                     "full": "/assets/gallery/pelaggi/m-06-formati-8b0e489a-1170.webp"
                 },
                 {
-                    "label": "Menu",
-                    "w": 1170,
-                    "h": 2532,
-                    "rail": "/assets/gallery/pelaggi/m-07-menu-f0d7cba2-640.webp",
-                    "railW": 640,
-                    "full": "/assets/gallery/pelaggi/m-07-menu-f0d7cba2-1170.webp"
-                },
-                {
                     "label": "Il frantoio",
                     "w": 1170,
                     "h": 2532,
                     "rail": "/assets/gallery/pelaggi/m-08-frantoio-b1569590-640.webp",
                     "railW": 640,
                     "full": "/assets/gallery/pelaggi/m-08-frantoio-b1569590-1170.webp"
-                },
-                {
-                    "label": "Ora per ora",
-                    "w": 1170,
-                    "h": 2532,
-                    "rail": "/assets/gallery/pelaggi/m-09-processo-90089809-640.webp",
-                    "railW": 640,
-                    "full": "/assets/gallery/pelaggi/m-09-processo-90089809-1170.webp"
                 },
                 {
                     "label": "Scheda analitica",
@@ -1431,22 +1054,6 @@ export const galleries: Record<string, Gallery> = {
                     "rail": "/assets/gallery/pelaggi/m-11-chi-siamo-89330a81-640.webp",
                     "railW": 640,
                     "full": "/assets/gallery/pelaggi/m-11-chi-siamo-89330a81-1170.webp"
-                },
-                {
-                    "label": "Quello che non facciamo",
-                    "w": 1170,
-                    "h": 2532,
-                    "rail": "/assets/gallery/pelaggi/m-12-regole-5b947d60-640.webp",
-                    "railW": 640,
-                    "full": "/assets/gallery/pelaggi/m-12-regole-5b947d60-1170.webp"
-                },
-                {
-                    "label": "Contatti",
-                    "w": 1170,
-                    "h": 2532,
-                    "rail": "/assets/gallery/pelaggi/m-13-contatti-d4f2274e-640.webp",
-                    "railW": 640,
-                    "full": "/assets/gallery/pelaggi/m-13-contatti-d4f2274e-1170.webp"
                 },
                 {
                     "label": "Il modulo d'ordine",

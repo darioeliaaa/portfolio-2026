@@ -1,6 +1,8 @@
 "use client";
 
+import { useRef } from "react";
 import { pricingPlans } from "@/data/pricing-plans";
+import CarouselCount from "./carousel-count";
 import { scrollToId } from "@/lib/scroll";
 import { prefillContact } from "@/lib/ui";
 import SectionTitle from "./section-title";
@@ -8,6 +10,7 @@ import SectionTitle from "./section-title";
 const MAINTENANCE = ["Rinnovo dominio", "Frontend (Vercel)", "Backend (Render)*", "Database (Neon)*"];
 
 export default function Pricing() {
+    const plansRef = useRef<HTMLOListElement>(null);
     const ask = (plan: string) => {
         prefillContact(plan);
         scrollToId("contatti");
@@ -24,7 +27,7 @@ export default function Pricing() {
                 </p>
             </div>
 
-            <ol className="plans">
+            <ol ref={plansRef} className="plans">
                 {pricingPlans.map((p, i) => (
                     <li key={p.name} className="plan cols" data-reveal>
                         <div className="plan__name">
@@ -51,6 +54,7 @@ export default function Pricing() {
                     </li>
                 ))}
             </ol>
+            <CarouselCount target={plansRef} total={pricingPlans.length} />
 
             <div className="care cols" data-reveal>
                 <div className="care__name">
