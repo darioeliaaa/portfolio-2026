@@ -1,0 +1,201 @@
+/* Pagina /cv: la versione web del curriculum, nello stile del sito */
+
+.cv {
+    position: relative;
+    z-index: 2;
+    padding: calc(var(--header-h) + 6vh) 0 14vh;
+}
+.cv__top {
+    align-items: center;
+    font-size: 14px;
+}
+.cv__top > a:first-child {
+    padding-left: 2px;
+    justify-self: start;
+}
+.cv__note {
+    margin: 0;
+    padding-left: 14px;
+}
+.cv__dl {
+    justify-self: end;
+}
+.cv__head {
+    padding: 10vh var(--side) 8vh;
+    text-align: center;
+}
+.cv__word {
+    margin: 0;
+    font-size: clamp(56px, 14vw, 270px);
+}
+.cv__name {
+    margin: -7vw 0 0;
+    position: relative;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: clamp(40px, 5vw, 92px);
+    letter-spacing: -0.055em;
+    line-height: 1;
+}
+.cv__role {
+    margin: 18px 0 0;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(22px, 2vw, 32px);
+}
+.cv__contacts {
+    margin: 22px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 22px;
+    color: var(--fg-2);
+}
+.cv__contacts a:hover {
+    color: var(--fg);
+}
+.cv__block {
+    padding-block: 34px 38px;
+    border-top: 1px solid var(--rule);
+    align-items: start;
+}
+.cv__h {
+    margin: 4px 0 0;
+    padding-left: 2px;
+    color: var(--fg-3);
+    font-weight: 400;
+}
+.cv__body {
+    grid-column: 2 / 4;
+    padding-left: 14px;
+    display: grid;
+    gap: 28px;
+    max-width: 74ch;
+    font-size: 15.5px;
+    line-height: 1.6;
+}
+.cv__body p {
+    margin: 0;
+    color: var(--fg-2);
+}
+.cv__profile {
+    font-size: clamp(19px, 1.5vw, 23px);
+    line-height: 1.4;
+    color: var(--fg) !important;
+    letter-spacing: -0.01em;
+}
+.cv__entry {
+    display: grid;
+    gap: 6px;
+}
+.cv__entry header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+}
+.cv__entry h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+.cv__when {
+    margin: 0;
+    flex: none;
+    color: var(--fg-3) !important;
+}
+.cv__meta {
+    font-size: 14px;
+}
+.cv__entry ul {
+    margin: 4px 0 0;
+    padding-left: 18px;
+    display: grid;
+    gap: 6px;
+    color: var(--fg-2);
+}
+.cv__entry strong {
+    color: var(--fg);
+    font-weight: 500;
+}
+.cv__tags {
+    color: var(--fg-3) !important;
+    margin-top: 4px !important;
+}
+.cv__skills {
+    margin: 0;
+    display: grid;
+    gap: 10px;
+}
+.cv__skills div {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 16px;
+}
+.cv__skills dt {
+    font-weight: 500;
+}
+.cv__skills dd {
+    margin: 0;
+    color: var(--fg-2);
+}
+.cv__gdpr {
+    margin: 0;
+    padding-top: 26px;
+    border-top: 1px solid var(--rule);
+    font-size: 12px;
+    color: var(--fg-3);
+}
+.cv__gdpr span:last-child {
+    grid-column: 2 / 4;
+    padding-left: 14px;
+    max-width: 80ch;
+}
+
+@media (max-width: 760px) {
+    .cv__top {
+        gap: 12px;
+    }
+    .cv__note {
+        padding-left: 2px;
+    }
+    .cv__dl {
+        justify-self: start;
+    }
+    .cv__body,
+    .cv__gdpr span:last-child {
+        grid-column: 1;
+        padding-left: 2px;
+        margin-top: 14px;
+    }
+    .cv__skills div {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+    .cv__entry header {
+        flex-direction: column;
+        gap: 2px;
+    }
+}
+
+@media print {
+    .site-header,
+    .site-footer,
+    .grid-lines,
+    .no-print,
+    .toaster,
+    .cv__word {
+        display: none !important;
+    }
+    body {
+        background: #fff;
+        color: #000;
+    }
+    .cv {
+        padding: 0;
+    }
+    .cv__name {
+        margin-top: 0;
+    }
+}
