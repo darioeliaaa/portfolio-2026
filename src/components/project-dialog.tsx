@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import type { Project } from "@/data/projects";
 import { galleries, type GalleryShot, type GalleryView } from "@/data/galleries";
 import { lockScroll } from "@/lib/scroll";
@@ -129,6 +130,9 @@ export default function ProjectDialog({
     const panelRef = useRef<HTMLDivElement>(null);
     const closeRef = useRef<HTMLButtonElement>(null);
     const returnFocus = useRef<HTMLElement | null>(null);
+    // il pannello vive nel body: dentro la sezione Progetti finirebbe sotto l'header
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => setMounted(true), []);
 
     useEffect(() => {
         if (!open) return;
@@ -165,7 +169,8 @@ export default function ProjectDialog({
 
     const hasLive = project && project.live && project.live !== "#";
 
-    return (
+    if (!mounted) return null;
+    return createPortal(
         <div className={"pdialog" + (open ? " is-open" : "")} aria-hidden={!open} inert={!open} onClick={onClose}>
             <div
                 ref={panelRef}
@@ -248,6 +253,7 @@ export default function ProjectDialog({
                     </>
                 )}
             </div>
-        </div>
+        </div>,
+        document.body,
     );
 }

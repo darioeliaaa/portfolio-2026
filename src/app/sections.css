@@ -474,7 +474,8 @@
     position: fixed;
     inset: 0;
     z-index: 90;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(6px);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.45s var(--ease-out);
@@ -1600,5 +1601,12 @@
         inset: 0 auto 0 0;
         background: currentColor;
         transition: width 0.3s var(--ease-out);
+    }
+}
+
+/* su telefono il pannello del progetto occupa tutto lo schermo: niente pagina che si intravede sopra */
+@media (max-width: 760px) {
+    .pdialog__panel {
+        inset: 0;
     }
 }
